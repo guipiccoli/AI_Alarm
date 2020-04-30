@@ -21,6 +21,7 @@
 		AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79E942135237A00E7AC1F /* ViewController.swift */; };
 		AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79E982135268800E7AC1F /* PreviewView.swift */; };
 		AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79E992135268800E7AC1F /* CameraFeedManager.swift */; };
+		E7DAF13E245B69BC0073E8C2 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DAF13D245B69BC0073E8C2 /* ResultsViewController.swift */; };
 		FA788B881E6A78BDBE204368 /* Pods_ImageClassification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19D0F9B3832319248B9C534 /* Pods_ImageClassification.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		AF4302742A60273F487FDE66 /* Pods-ImageClassification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassification.release.xcconfig"; path = "Target Support Files/Pods-ImageClassification/Pods-ImageClassification.release.xcconfig"; sourceTree = "<group>"; };
 		C1082DD6654FFCDAEA2E97A3 /* Pods-ImageClassification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassification.debug.xcconfig"; path = "Target Support Files/Pods-ImageClassification/Pods-ImageClassification.debug.xcconfig"; sourceTree = "<group>"; };
 		C19D0F9B3832319248B9C534 /* Pods_ImageClassification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageClassification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7DAF13D245B69BC0073E8C2 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 			children = (
 				AAE79E942135237A00E7AC1F /* ViewController.swift */,
 				AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */,
+				E7DAF13D245B69BC0073E8C2 /* ResultsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */,
 				AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */,
 				AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */,
+				E7DAF13E245B69BC0073E8C2 /* ResultsViewController.swift in Sources */,
 				AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */,
 				AAAB096E218981FA0015A1F2 /* CVPixelBufferExtension.swift in Sources */,
 				AA16E5A22180843800D9E153 /* InfoCell.swift in Sources */,

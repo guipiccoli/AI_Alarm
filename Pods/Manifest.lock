@@ -1,7 +1,7 @@
 PODS:
-  - TensorFlowLiteC (2.0.0)
-  - TensorFlowLiteSwift (2.0.0):
-    - TensorFlowLiteC (= 2.0.0)
+  - TensorFlowLiteC (2.1.0)
+  - TensorFlowLiteSwift (2.1.0):
+    - TensorFlowLiteC (= 2.1.0)
 
 DEPENDENCIES:
   - TensorFlowLiteSwift
@@ -12,8 +12,8 @@ SPEC REPOS:
     - TensorFlowLiteSwift
 
 SPEC CHECKSUMS:
-  TensorFlowLiteC: d22a94f77938edb2dfcb9674937f9548a3fcdb23
-  TensorFlowLiteSwift: dcd91bd74091f8e3e1b9b28a7d789f635dc26bea
+  TensorFlowLiteC: 215603d4426d93810eace5947e317389554a4b66
+  TensorFlowLiteSwift: 9d8137f18d5ac30ca89bba4fbe118e0949ac5743
 
 PODFILE CHECKSUM: 89f7867e5c2130babaa8402a0826ea3555a14089
 

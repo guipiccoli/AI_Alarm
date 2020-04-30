@@ -176,7 +176,6 @@ extension ViewController: CameraFeedManagerDelegate {
 
   // MARK: Session Handling Alerts
   func sessionWasInterrupted(canResumeManually resumeManually: Bool) {
-
     // Updates the UI when session is interupted.
     if resumeManually {
       self.resumeButton.isHidden = false

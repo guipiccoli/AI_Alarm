@@ -190,6 +190,10 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
       if indexPath.row == 0 {
         font = highlightedFont
         color = infoTextColor
+        
+        if fieldName == "toilet tissue" {
+            print("ACERTOOO")
+        }
       }
       else {
         font = infoFont
