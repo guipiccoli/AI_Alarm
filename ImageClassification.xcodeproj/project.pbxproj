@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752B05072460A76B00697D26 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 752B05062460A76B00697D26 /* SFProDisplay-Regular.ttf */; };
+		752B05092460A78D00697D26 /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 752B05082460A78D00697D26 /* SFProDisplay-Bold.ttf */; };
+		752B050B2460A7AD00697D26 /* SFProDisplay-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 752B050A2460A7AC00697D26 /* SFProDisplay-Thin.ttf */; };
+		7537A4042460AA680057AD49 /* SFMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7537A4032460AA680057AD49 /* SFMono-Regular.otf */; };
+		7537A4062460AC3B0057AD49 /* AlarmsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537A4052460AC3B0057AD49 /* AlarmsViewController.swift */; };
+		7537A4092460B8360057AD49 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7537A4082460B8360057AD49 /* Date+Extensions.swift */; };
+		7577D0BD2460883700708244 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577D0BC2460883700708244 /* Alarm.swift */; };
+		7577D0C0246094B000708244 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577D0BF246094B000708244 /* Database.swift */; };
+		7577D0C224609F9300708244 /* Alarms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7577D0C124609F9300708244 /* Alarms.storyboard */; };
+		7577D0C42460A64900708244 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577D0C32460A64900708244 /* AlarmTableViewCell.swift */; };
 		AA16E5A22180843800D9E153 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16E5A12180843700D9E153 /* InfoCell.swift */; };
 		AA5B0EEA217E5E300026FF23 /* InferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */; };
 		AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B0EEB217E70000026FF23 /* CurvedView.swift */; };
@@ -25,6 +35,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		752B05062460A76B00697D26 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		752B05082460A78D00697D26 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
+		752B050A2460A7AC00697D26 /* SFProDisplay-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Thin.ttf"; sourceTree = "<group>"; };
+		7537A4032460AA680057AD49 /* SFMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Regular.otf"; sourceTree = "<group>"; };
+		7537A4052460AC3B0057AD49 /* AlarmsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmsViewController.swift; sourceTree = "<group>"; };
+		7537A4082460B8360057AD49 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		7577D0BC2460883700708244 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		7577D0BF246094B000708244 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		7577D0C124609F9300708244 /* Alarms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarms.storyboard; sourceTree = "<group>"; };
+		7577D0C32460A64900708244 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		AA16E5A12180843700D9E153 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceViewController.swift; sourceTree = "<group>"; };
 		AA5B0EEB217E70000026FF23 /* CurvedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
@@ -75,9 +95,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		752B05042460A71400697D26 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				752B05052460A71F00697D26 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		752B05052460A71F00697D26 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				752B050A2460A7AC00697D26 /* SFProDisplay-Thin.ttf */,
+				752B05082460A78D00697D26 /* SFProDisplay-Bold.ttf */,
+				752B05062460A76B00697D26 /* SFProDisplay-Regular.ttf */,
+				7537A4032460AA680057AD49 /* SFMono-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7537A4072460B8270057AD49 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7537A4082460B8360057AD49 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		7577D0B92460865F00708244 /* AI Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				7537A4072460B8270057AD49 /* Extensions */,
+				752B05042460A71400697D26 /* Assets */,
+				7577D0BE2460949800708244 /* Util */,
 				7577D0BA2460866800708244 /* Models */,
 				7577D0BB2460866D00708244 /* Screens */,
 			);
@@ -87,6 +137,7 @@
 		7577D0BA2460866800708244 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7577D0BC2460883700708244 /* Alarm.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -94,8 +145,19 @@
 		7577D0BB2460866D00708244 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				7577D0C124609F9300708244 /* Alarms.storyboard */,
+				7577D0C32460A64900708244 /* AlarmTableViewCell.swift */,
+				7537A4052460AC3B0057AD49 /* AlarmsViewController.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		7577D0BE2460949800708244 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7577D0BF246094B000708244 /* Database.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		AA16E5A02180843700D9E153 /* Cells */ = {
@@ -264,11 +326,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7537A4042460AA680057AD49 /* SFMono-Regular.otf in Resources */,
 				AAE79E64213521DB00E7AC1F /* LaunchScreen.storyboard in Resources */,
 				AAE79E61213521DB00E7AC1F /* Assets.xcassets in Resources */,
+				752B050B2460A7AD00697D26 /* SFProDisplay-Thin.ttf in Resources */,
+				7577D0C224609F9300708244 /* Alarms.storyboard in Resources */,
+				752B05072460A76B00697D26 /* SFProDisplay-Regular.ttf in Resources */,
 				AA5FEB7E21355CCC00F9BD4B /* labels.txt in Resources */,
 				AAE79E5F213521DA00E7AC1F /* Main.storyboard in Resources */,
 				AA5FEB7D21355CCC00F9BD4B /* mobilenet_quant_v1_224.tflite in Resources */,
+				752B05092460A78D00697D26 /* SFProDisplay-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,14 +389,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */,
+				7577D0C0246094B000708244 /* Database.swift in Sources */,
 				AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */,
 				AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */,
 				AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */,
+				7537A4062460AC3B0057AD49 /* AlarmsViewController.swift in Sources */,
 				AAAB096E218981FA0015A1F2 /* CVPixelBufferExtension.swift in Sources */,
 				AA16E5A22180843800D9E153 /* InfoCell.swift in Sources */,
 				AABFCBB2213FE0B100C0A67B /* ModelDataHandler.swift in Sources */,
+				7537A4092460B8360057AD49 /* Date+Extensions.swift in Sources */,
+				7577D0BD2460883700708244 /* Alarm.swift in Sources */,
 				AA5B0EEA217E5E300026FF23 /* InferenceViewController.swift in Sources */,
 				AAE79E5A213521DA00E7AC1F /* AppDelegate.swift in Sources */,
+				7577D0C42460A64900708244 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +556,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ImageClassification/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -511,7 +583,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = ImageClassification/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

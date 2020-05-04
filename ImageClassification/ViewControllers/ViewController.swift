@@ -60,7 +60,7 @@ class ViewController: UIViewController {
     previewView.shouldUseClipboardImage = true
     NotificationCenter.default.addObserver(self,
                                            selector: #selector(classifyPasteboardImage),
-                                           name: UIApplication.didBecomeActiveNotification,
+                                           nameLabel: UIApplication.didBecomeActiveNotification,
                                            object: nil)
 #endif
     cameraCapture.delegate = self
