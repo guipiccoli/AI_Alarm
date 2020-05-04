@@ -15,7 +15,7 @@ class Onboarding1: ViewController {
     override func viewDidLoad() {
         startingMessage.attributedText = NSMutableAttributedString()
             .normal("We are going to make you ", 24)
-            .bold("Wake up", 24)
+            .bold("get up", 24)
             .normal("!", 24)
     }
 }

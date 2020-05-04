@@ -25,12 +25,22 @@
                                 <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Is it hard to wake up?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lC0-z5-h10">
+                                <rect key="frame" x="65" y="209" width="284" height="148"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.94901960784313721" green="1" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="XYh-xW-ANN" firstAttribute="centerX" secondItem="ExB-bM-1oA" secondAttribute="centerX" id="KyR-gN-FK5"/>
                             <constraint firstItem="efu-rr-Png" firstAttribute="trailing" secondItem="XYh-xW-ANN" secondAttribute="trailing" constant="65" id="Q1d-MN-tuR"/>
+                            <constraint firstItem="lC0-z5-h10" firstAttribute="centerY" secondItem="28W-EH-Aby" secondAttribute="centerY" id="Q3a-5E-gWd"/>
+                            <constraint firstAttribute="trailing" secondItem="lC0-z5-h10" secondAttribute="trailing" constant="65" id="QqA-Oh-EZt"/>
+                            <constraint firstItem="lC0-z5-h10" firstAttribute="centerX" secondItem="ExB-bM-1oA" secondAttribute="centerX" id="T6k-yH-NFt"/>
                             <constraint firstItem="XYh-xW-ANN" firstAttribute="leading" secondItem="efu-rr-Png" secondAttribute="leading" constant="65" id="XQQ-1J-VSF"/>
+                            <constraint firstItem="lC0-z5-h10" firstAttribute="leading" secondItem="ExB-bM-1oA" secondAttribute="leading" constant="65" id="Y8b-To-7Zs"/>
                             <constraint firstItem="28W-EH-Aby" firstAttribute="centerX" secondItem="ExB-bM-1oA" secondAttribute="centerX" id="ZQS-Pb-HtH"/>
                             <constraint firstItem="28W-EH-Aby" firstAttribute="top" relation="greaterThanOrEqual" secondItem="efu-rr-Png" secondAttribute="top" priority="900" constant="25" id="btl-Ym-rpf"/>
                             <constraint firstItem="XYh-xW-ANN" firstAttribute="top" secondItem="28W-EH-Aby" secondAttribute="bottom" constant="25" id="cJ2-qG-xxi"/>
