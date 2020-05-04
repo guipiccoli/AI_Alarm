@@ -46,7 +46,8 @@ class ViewController: UIViewController {
     ModelDataHandler(modelFileInfo: MobileNet.modelInfo, labelsFileInfo: MobileNet.labelsInfo)
 
   // Handles the presenting of results on the screen
-  private var inferenceViewController: InferenceViewController?
+    private var inferenceViewController: InferenceViewController?
+    private var resultViewController: ResultsViewController?
 
   // MARK: View Handling Methods
   override func viewDidLoad() {
@@ -65,13 +66,11 @@ class ViewController: UIViewController {
 #endif
     cameraCapture.delegate = self
 
-    addPanGesture()
   }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    changeBottomViewState()
 
 #if !targetEnvironment(simulator)
     cameraCapture.checkCameraConfigurationAndStartSession()
@@ -105,16 +104,19 @@ class ViewController: UIViewController {
     super.prepare(for: segue, sender: sender)
 
     if segue.identifier == "EMBED" {
-
-      guard let tempModelDataHandler = modelDataHandler else {
-        return
-      }
-      inferenceViewController = segue.destination as? InferenceViewController
-      inferenceViewController?.wantedInputHeight = tempModelDataHandler.inputHeight
-      inferenceViewController?.wantedInputWidth = tempModelDataHandler.inputWidth
-      inferenceViewController?.maxResults = tempModelDataHandler.resultCount
-      inferenceViewController?.threadCountLimit = tempModelDataHandler.threadCountLimit
-      inferenceViewController?.delegate = self
+        guard let tempModelDataHandler = modelDataHandler else {
+            return
+        }
+        
+        resultViewController = segue.destination as? ResultsViewController
+        
+//
+//        inferenceViewController = segue.destination as? InferenceViewController
+//        inferenceViewController?.wantedInputHeight = tempModelDataHandler.inputHeight
+//        inferenceViewController?.wantedInputWidth = tempModelDataHandler.inputWidth
+//        inferenceViewController?.maxResults = tempModelDataHandler.resultCount
+//        inferenceViewController?.threadCountLimit = tempModelDataHandler.threadCountLimit
+//        inferenceViewController?.delegate = self
 
     }
   }
@@ -139,19 +141,6 @@ class ViewController: UIViewController {
     NotificationCenter.default.removeObserver(self)
   }
 
-}
-
-// MARK: InferenceViewControllerDelegate Methods
-extension ViewController: InferenceViewControllerDelegate {
-
-  func didChangeThreadCount(to count: Int) {
-    if modelDataHandler?.threadCount == count { return }
-    modelDataHandler = ModelDataHandler(
-      modelFileInfo: MobileNet.modelInfo,
-      labelsFileInfo: MobileNet.labelsInfo,
-      threadCount: count
-    )
-  }
 }
 
 // MARK: CameraFeedManagerDelegate Methods
@@ -223,138 +212,4 @@ extension ViewController: CameraFeedManagerDelegate {
     self.present(alert, animated: true)
     previewView.shouldUseClipboardImage = true
   }
-}
-
-// MARK: Bottom Sheet Interaction Methods
-extension ViewController {
-
-  // MARK: Bottom Sheet Interaction Methods
-  /**
-   This method adds a pan gesture to make the bottom sheet interactive.
-   */
-  private func addPanGesture() {
-    let panGesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.didPan(panGesture:)))
-    bottomSheetView.addGestureRecognizer(panGesture)
-  }
-
-
-  /** Change whether bottom sheet should be in expanded or collapsed state.
-   */
-  private func changeBottomViewState() {
-
-    guard let inferenceVC = inferenceViewController else {
-      return
-    }
-
-    if bottomSheetViewBottomSpace.constant == inferenceVC.collapsedHeight - bottomSheetView.bounds.size.height {
-
-      bottomSheetViewBottomSpace.constant = 0.0
-    }
-    else {
-      bottomSheetViewBottomSpace.constant = inferenceVC.collapsedHeight - bottomSheetView.bounds.size.height
-    }
-    setImageBasedOnBottomViewState()
-  }
-
-  /**
-   Set image of the bottom sheet icon based on whether it is expanded or collapsed
-   */
-  private func setImageBasedOnBottomViewState() {
-
-    if bottomSheetViewBottomSpace.constant == 0.0 {
-      bottomSheetStateImageView.image = UIImage(named: "down_icon")
-    }
-    else {
-      bottomSheetStateImageView.image = UIImage(named: "up_icon")
-    }
-  }
-
-  /**
-   This method responds to the user panning on the bottom sheet.
-   */
-  @objc func didPan(panGesture: UIPanGestureRecognizer) {
-
-    // Opens or closes the bottom sheet based on the user's interaction with the bottom sheet.
-    let translation = panGesture.translation(in: view)
-
-    switch panGesture.state {
-    case .began:
-      initialBottomSpace = bottomSheetViewBottomSpace.constant
-      translateBottomSheet(withVerticalTranslation: translation.y)
-    case .changed:
-      translateBottomSheet(withVerticalTranslation: translation.y)
-    case .cancelled:
-      setBottomSheetLayout(withBottomSpace: initialBottomSpace)
-    case .ended:
-      translateBottomSheetAtEndOfPan(withVerticalTranslation: translation.y)
-      setImageBasedOnBottomViewState()
-      initialBottomSpace = 0.0
-    default:
-      break
-    }
-  }
-
-  /**
-   This method sets bottom sheet translation while pan gesture state is continuously changing.
-   */
-  private func translateBottomSheet(withVerticalTranslation verticalTranslation: CGFloat) {
-
-    let bottomSpace = initialBottomSpace - verticalTranslation
-    guard bottomSpace <= 0.0 && bottomSpace >= inferenceViewController!.collapsedHeight - bottomSheetView.bounds.size.height else {
-      return
-    }
-    setBottomSheetLayout(withBottomSpace: bottomSpace)
-  }
-
-  /**
-   This method changes bottom sheet state to either fully expanded or closed at the end of pan.
-   */
-  private func translateBottomSheetAtEndOfPan(withVerticalTranslation verticalTranslation: CGFloat) {
-
-    // Changes bottom sheet state to either fully open or closed at the end of pan.
-    let bottomSpace = bottomSpaceAtEndOfPan(withVerticalTranslation: verticalTranslation)
-    setBottomSheetLayout(withBottomSpace: bottomSpace)
-  }
-
-  /**
-   Return the final state of the bottom sheet view (whether fully collapsed or expanded) that is to be retained.
-   */
-  private func bottomSpaceAtEndOfPan(withVerticalTranslation verticalTranslation: CGFloat) -> CGFloat {
-
-    // Calculates whether to fully expand or collapse bottom sheet when pan gesture ends.
-    var bottomSpace = initialBottomSpace - verticalTranslation
-
-    var height: CGFloat = 0.0
-    if initialBottomSpace == 0.0 {
-      height = bottomSheetView.bounds.size.height
-    }
-    else {
-      height = inferenceViewController!.collapsedHeight
-    }
-
-    let currentHeight = bottomSheetView.bounds.size.height + bottomSpace
-
-    if currentHeight - height <= collapseTransitionThreshold {
-      bottomSpace = inferenceViewController!.collapsedHeight - bottomSheetView.bounds.size.height
-    }
-    else if currentHeight - height >= expandThransitionThreshold {
-      bottomSpace = 0.0
-    }
-    else {
-      bottomSpace = initialBottomSpace
-    }
-
-    return bottomSpace
-  }
-
-  /**
-   This method layouts the change of the bottom space of bottom sheet with respect to the view managed by this controller.
-   */
-  func setBottomSheetLayout(withBottomSpace bottomSpace: CGFloat) {
-
-    view.setNeedsLayout()
-    bottomSheetViewBottomSpace.constant = bottomSpace
-    view.setNeedsLayout()
-  }
-
 }
