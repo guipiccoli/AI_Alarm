@@ -75,6 +75,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7577D0B92460865F00708244 /* AI Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				7577D0BA2460866800708244 /* Models */,
+				7577D0BB2460866D00708244 /* Screens */,
+			);
+			path = "AI Alarm";
+			sourceTree = "<group>";
+		};
+		7577D0BA2460866800708244 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7577D0BB2460866D00708244 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		AA16E5A02180843700D9E153 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +169,7 @@
 		AAE79E58213521DA00E7AC1F /* ImageClassification */ = {
 			isa = PBXGroup;
 			children = (
+				7577D0B92460865F00708244 /* AI Alarm */,
 				AAAB096C218981A30015A1F2 /* Extensions */,
 				AA16E5A02180843700D9E153 /* Cells */,
 				AA24751A2170A054000B6A31 /* Views */,
@@ -454,7 +478,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RL63GUXBB4;
+				DEVELOPMENT_TEAM = 66X93R6BN6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -481,7 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RL63GUXBB4;
+				DEVELOPMENT_TEAM = 66X93R6BN6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
