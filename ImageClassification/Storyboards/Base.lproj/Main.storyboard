@@ -261,6 +261,9 @@
                                                 <integer key="value" value="18"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confirmObjectSelection:" destination="FhE-Jg-j1B" eventType="touchUpInside" id="oJQ-9t-Eqi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

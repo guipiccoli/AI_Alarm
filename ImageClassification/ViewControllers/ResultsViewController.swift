@@ -44,6 +44,11 @@ class ResultsViewController: UIViewController {
         
         return (fieldName, info)
     }
+    
+    
+    @IBAction func confirmObjectSelection(_ sender: UIButton) {
+        UserDefaults.standard.set(displayStringsForResults(position: 1).name, forKey: "objectSaved") 
+    }
 }
 
 extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
