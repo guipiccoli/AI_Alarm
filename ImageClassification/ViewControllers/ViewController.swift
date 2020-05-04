@@ -104,20 +104,7 @@ class ViewController: UIViewController {
     super.prepare(for: segue, sender: sender)
 
     if segue.identifier == "EMBED" {
-        guard let tempModelDataHandler = modelDataHandler else {
-            return
-        }
-        
         resultViewController = segue.destination as? ResultsViewController
-        
-//
-//        inferenceViewController = segue.destination as? InferenceViewController
-//        inferenceViewController?.wantedInputHeight = tempModelDataHandler.inputHeight
-//        inferenceViewController?.wantedInputWidth = tempModelDataHandler.inputWidth
-//        inferenceViewController?.maxResults = tempModelDataHandler.resultCount
-//        inferenceViewController?.threadCountLimit = tempModelDataHandler.threadCountLimit
-//        inferenceViewController?.delegate = self
-
     }
   }
 
@@ -156,10 +143,8 @@ extension ViewController: CameraFeedManagerDelegate {
 
     // Display results by handing off to the InferenceViewController.
     DispatchQueue.main.async {
-      let resolution = CGSize(width: CVPixelBufferGetWidth(pixelBuffer), height: CVPixelBufferGetHeight(pixelBuffer))
-      self.inferenceViewController?.inferenceResult = self.result
-      self.inferenceViewController?.resolution = resolution
-      self.inferenceViewController?.tableView.reloadData()
+        self.resultViewController?.inferenceResult = self.result
+        self.resultViewController?.resultTableView.reloadData()
     }
   }
 

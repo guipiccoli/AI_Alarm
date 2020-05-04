@@ -9,18 +9,17 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-    @IBOutlet weak var itemLabel: UILabel!
-    @IBOutlet weak var precisionLabel: UILabel!
     
     var inferenceResult: Result? = nil
+    @IBOutlet weak var resultTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let info = displayStringsForResults(position: 0)
-        itemLabel.text = info.name
-        precisionLabel.text = info.precision
+        resultTableView.delegate = self
+        resultTableView.dataSource = self
         
+        let info = displayStringsForResults(position: 0)
         print(info)
     }
     
@@ -45,4 +44,34 @@ class ResultsViewController: UIViewController {
         
         return (fieldName, info)
     }
+}
+
+extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as? ResultTableViewCell
+        cell?.itemName.text = "alo"
+        cell?.itemAccuracy.text = "100%"
+        
+        var fieldName = ""
+        var info = ""
+        
+        let tuple = displayStringsForResults(position: indexPath.row)
+        fieldName = tuple.name
+        info = tuple.precision
+
+            
+        cell?.itemName.text = fieldName
+        cell?.itemAccuracy.text = info
+        return cell ?? UITableViewCell()
+        
+    }
+    
+
+
+    
+    
 }
