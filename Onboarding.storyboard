@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IVa-Zm-HwM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding1-->
+        <scene sceneID="hjA-xc-gKz">
+            <objects>
+                <viewController id="IVa-Zm-HwM" customClass="Onboarding1" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ExB-bM-1oA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Onboarding1" translatesAutoresizingMaskIntoConstraints="NO" id="28W-EH-Aby">
+                                <rect key="frame" x="-0.5" y="69" width="415" height="473"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="We are going to make you get up!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYh-xW-ANN">
+                                <rect key="frame" x="65" y="583" width="284" height="73"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.40000000000000002" blue="0.5725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="XYh-xW-ANN" firstAttribute="centerX" secondItem="ExB-bM-1oA" secondAttribute="centerX" id="KyR-gN-FK5"/>
+                            <constraint firstItem="efu-rr-Png" firstAttribute="trailing" secondItem="XYh-xW-ANN" secondAttribute="trailing" constant="65" id="Q1d-MN-tuR"/>
+                            <constraint firstItem="XYh-xW-ANN" firstAttribute="leading" secondItem="efu-rr-Png" secondAttribute="leading" constant="65" id="XQQ-1J-VSF"/>
+                            <constraint firstItem="28W-EH-Aby" firstAttribute="centerX" secondItem="ExB-bM-1oA" secondAttribute="centerX" id="ZQS-Pb-HtH"/>
+                            <constraint firstItem="28W-EH-Aby" firstAttribute="top" relation="greaterThanOrEqual" secondItem="efu-rr-Png" secondAttribute="top" priority="900" constant="25" id="btl-Ym-rpf"/>
+                            <constraint firstItem="XYh-xW-ANN" firstAttribute="top" secondItem="28W-EH-Aby" secondAttribute="bottom" constant="25" id="cJ2-qG-xxi"/>
+                            <constraint firstItem="28W-EH-Aby" firstAttribute="top" relation="lessThanOrEqual" secondItem="efu-rr-Png" secondAttribute="top" priority="900" constant="64" id="ibC-jP-RWB"/>
+                            <constraint firstItem="28W-EH-Aby" firstAttribute="width" secondItem="ExB-bM-1oA" secondAttribute="width" multiplier="1.00242" id="yx8-Fo-jTP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="efu-rr-Png"/>
+                    </view>
+                    <connections>
+                        <outlet property="startingMessage" destination="XYh-xW-ANN" id="Vmr-5u-Thb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yBv-hc-GFL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-36.231884057971016" y="39.508928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Onboarding1" width="375" height="473"/>
+    </resources>
+</document>
