@@ -170,7 +170,18 @@ your alarm!</string>
                     <view key="view" contentMode="scaleToFill" id="YC3-vR-9bL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="kBX-jW-FNI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.67843137254901964" green="0.90588235294117647" blue="0.90588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kBX-jW-FNI" firstAttribute="top" secondItem="qR4-95-1pA" secondAttribute="top" id="D0y-dj-oAm"/>
+                            <constraint firstItem="kBX-jW-FNI" firstAttribute="leading" secondItem="qR4-95-1pA" secondAttribute="leading" id="ME7-18-Fsd"/>
+                            <constraint firstItem="qR4-95-1pA" firstAttribute="bottom" secondItem="kBX-jW-FNI" secondAttribute="bottom" id="khG-gS-v1l"/>
+                            <constraint firstItem="qR4-95-1pA" firstAttribute="trailing" secondItem="kBX-jW-FNI" secondAttribute="trailing" id="vOX-sI-Kct"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qR4-95-1pA"/>
                     </view>
                 </viewController>
@@ -180,6 +191,7 @@ your alarm!</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Background" width="564" height="811"/>
         <image name="Clock" width="150" height="161"/>
         <image name="ElipseBottom" width="375" height="496"/>
         <image name="Group 30" width="586" height="586"/>
