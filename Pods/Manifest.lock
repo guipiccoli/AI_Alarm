@@ -1,20 +1,24 @@
 PODS:
+  - AnyCodable (1.2.0)
   - TensorFlowLiteC (2.1.0)
   - TensorFlowLiteSwift (2.1.0):
     - TensorFlowLiteC (= 2.1.0)
 
 DEPENDENCIES:
+  - AnyCodable
   - TensorFlowLiteSwift
 
 SPEC REPOS:
   trunk:
+    - AnyCodable
     - TensorFlowLiteC
     - TensorFlowLiteSwift
 
 SPEC CHECKSUMS:
+  AnyCodable: bb05e19c676899e0fd511652f2d83bfa044e2503
   TensorFlowLiteC: 215603d4426d93810eace5947e317389554a4b66
   TensorFlowLiteSwift: 9d8137f18d5ac30ca89bba4fbe118e0949ac5743
 
-PODFILE CHECKSUM: 89f7867e5c2130babaa8402a0826ea3555a14089
+PODFILE CHECKSUM: 0fddedd0ad0a099da19512a85dc63d564ae8b976
 
 COCOAPODS: 1.9.1

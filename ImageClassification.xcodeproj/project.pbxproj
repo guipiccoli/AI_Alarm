@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		7577D0C0246094B000708244 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577D0BF246094B000708244 /* Database.swift */; };
 		7577D0C224609F9300708244 /* Alarms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7577D0C124609F9300708244 /* Alarms.storyboard */; };
 		7577D0C42460A64900708244 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577D0C32460A64900708244 /* AlarmTableViewCell.swift */; };
+		75AE72162461DB96003E3399 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AE72152461DB96003E3399 /* AnyCodable.swift */; };
+		75AE72182461E04D003E3399 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AE72172461E04D003E3399 /* AddAlarmViewController.swift */; };
 		AA16E5A22180843800D9E153 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16E5A12180843700D9E153 /* InfoCell.swift */; };
 		AA5B0EEA217E5E300026FF23 /* InferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */; };
 		AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B0EEB217E70000026FF23 /* CurvedView.swift */; };
@@ -45,6 +47,8 @@
 		7577D0BF246094B000708244 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		7577D0C124609F9300708244 /* Alarms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Alarms.storyboard; sourceTree = "<group>"; };
 		7577D0C32460A64900708244 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		75AE72152461DB96003E3399 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
+		75AE72172461E04D003E3399 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
 		AA16E5A12180843700D9E153 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceViewController.swift; sourceTree = "<group>"; };
 		AA5B0EEB217E70000026FF23 /* CurvedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				7577D0C124609F9300708244 /* Alarms.storyboard */,
 				7577D0C32460A64900708244 /* AlarmTableViewCell.swift */,
 				7537A4052460AC3B0057AD49 /* AlarmsViewController.swift */,
+				75AE72172461E04D003E3399 /* AddAlarmViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				7577D0BF246094B000708244 /* Database.swift */,
+				75AE72152461DB96003E3399 /* AnyCodable.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				AAE79E52213521DA00E7AC1F /* Sources */,
 				AAE79E53213521DA00E7AC1F /* Frameworks */,
 				AAE79E54213521DA00E7AC1F /* Resources */,
+				A173D4C910F37655878C54BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,6 +371,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A173D4C910F37655878C54BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageClassification/Pods-ImageClassification-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageClassification/Pods-ImageClassification-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageClassification/Pods-ImageClassification-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AA055D8B2162320A00B25948 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,6 +414,7 @@
 			files = (
 				AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */,
 				7577D0C0246094B000708244 /* Database.swift in Sources */,
+				75AE72162461DB96003E3399 /* AnyCodable.swift in Sources */,
 				AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */,
 				AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */,
 				AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */,
@@ -399,6 +424,7 @@
 				AABFCBB2213FE0B100C0A67B /* ModelDataHandler.swift in Sources */,
 				7537A4092460B8360057AD49 /* Date+Extensions.swift in Sources */,
 				7577D0BD2460883700708244 /* Alarm.swift in Sources */,
+				75AE72182461E04D003E3399 /* AddAlarmViewController.swift in Sources */,
 				AA5B0EEA217E5E300026FF23 /* InferenceViewController.swift in Sources */,
 				AAE79E5A213521DA00E7AC1F /* AppDelegate.swift in Sources */,
 				7577D0C42460A64900708244 /* AlarmTableViewCell.swift in Sources */,

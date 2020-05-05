@@ -15,11 +15,18 @@ class Database {
     
     // MARK: - Getters
     static func getMyAlarms() -> [Alarm] {
-        return UserDefaults.standard.value(forKey: MY_ALARMS) as? [Alarm] ?? []
+        let alarms: [Alarm]? = decode(UserDefaults.standard.data(forKey: MY_ALARMS))
+        return alarms ?? []
     }
     
     // MARK: - Setters
     static func updateMyAlarms(alarms: [Alarm]) {
-        UserDefaults.standard.set(alarms, forKey: MY_ALARMS)
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(alarms), forKey: MY_ALARMS)
     }
+    
+    private static func decode<T: Decodable>(_ data: Data?) -> T? {
+        guard let data = data else { return nil }
+        return try? PropertyListDecoder().decode(T.self, from: data)
+    }
+    
 }

@@ -7,4 +7,8 @@ target 'ImageClassification' do
 
   # Pods for ImageClassification
    pod 'TensorFlowLiteSwift'
+
+
+   pod 'AnyCodable'
+
 end

@@ -22,7 +22,6 @@ class AlarmTableViewCell: UITableViewCell {
     // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     // MARK: - Configuration
@@ -31,10 +30,20 @@ class AlarmTableViewCell: UITableViewCell {
         nameLabel.text = alarm.name
         timeLabel.text = alarm.time.hourString
         isOnSwitch.isOn =  alarm.isOn
-        imageButton.tintColor = alarm.pictureTrigger != nil ? UIColor(named: "Main Blue") : UIColor(named: "Sub Text")
-        remainingTimeLabel.text = "\(alarm.time.hours(sinceDate: Date()) ?? 0) hours remaining"
-        
-        
-    }
+        remainingTimeLabel.text = hourString(from: alarm.time.hours(sinceDate: Date()))
 
+        imageButton.tintColor =
+            alarm.pictureTrigger != nil ?
+                UIColor(named: "Main Blue") : UIColor(named: "Sub Text")
+    }
+    
+    func hourString(from hourCount: Int?) -> String {
+        
+        guard let hourCount = hourCount else { return "" }
+        
+        if hourCount == 0 { return "less than an hour remaining" }
+        if hourCount == 1 { return "1 hour remaining" }
+        
+        return "\(hourCount) hours remaining"
+    }
 }
