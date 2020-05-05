@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043314E12461D1A6002F0221 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043314E02461D1A6002F0221 /* OnboardingPageViewController.swift */; };
 		045CA3B324608D2D00D3243F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CA3B224608D2D00D3243F /* Onboarding.storyboard */; };
-		045CA3B52460951300D3243F /* Onboarding1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CA3B42460951300D3243F /* Onboarding1.swift */; };
+		045CA3B52460951300D3243F /* Onboarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CA3B42460951300D3243F /* Onboarding1ViewController.swift */; };
 		045CA3B72460975F00D3243F /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CA3B62460975F00D3243F /* NSMutableAttributedString+Extensions.swift */; };
 		AA16E5A22180843800D9E153 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16E5A12180843700D9E153 /* InfoCell.swift */; };
 		AA5B0EEA217E5E300026FF23 /* InferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */; };
@@ -28,8 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043314E02461D1A6002F0221 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = ImageClassification/Extensions/OnboardingPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		045CA3B224608D2D00D3243F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = SOURCE_ROOT; };
-		045CA3B42460951300D3243F /* Onboarding1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1.swift; sourceTree = SOURCE_ROOT; };
+		045CA3B42460951300D3243F /* Onboarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1ViewController.swift; sourceTree = SOURCE_ROOT; };
 		045CA3B62460975F00D3243F /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		AA16E5A12180843700D9E153 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				045CA3B224608D2D00D3243F /* Onboarding.storyboard */,
-				045CA3B42460951300D3243F /* Onboarding1.swift */,
+				045CA3B42460951300D3243F /* Onboarding1ViewController.swift */,
+				043314E02461D1A6002F0221 /* OnboardingPageViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -333,8 +336,9 @@
 			files = (
 				AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */,
 				AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */,
-				045CA3B52460951300D3243F /* Onboarding1.swift in Sources */,
+				045CA3B52460951300D3243F /* Onboarding1ViewController.swift in Sources */,
 				AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */,
+				043314E12461D1A6002F0221 /* OnboardingPageViewController.swift in Sources */,
 				AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */,
 				AAAB096E218981FA0015A1F2 /* CVPixelBufferExtension.swift in Sources */,
 				045CA3B72460975F00D3243F /* NSMutableAttributedString+Extensions.swift in Sources */,

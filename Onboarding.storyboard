@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1MZ-Jg-VGn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lrq-Z6-LZG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,10 +8,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Onboarding Page View Controller-->
+        <scene sceneID="qvq-WM-aRh">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Lrq-Z6-LZG" customClass="OnboardingPageViewController" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X1j-v1-whh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="-726"/>
+        </scene>
         <!--Onboarding1-->
         <scene sceneID="hjA-xc-gKz">
             <objects>
-                <viewController id="IVa-Zm-HwM" customClass="Onboarding1" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingPage1" id="IVa-Zm-HwM" customClass="Onboarding1" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ExB-bM-1oA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +68,7 @@
         <!--View Controller-->
         <scene sceneID="2BR-D5-Agf">
             <objects>
-                <viewController id="1MZ-Jg-VGn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingPage2" id="1MZ-Jg-VGn" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SuF-nQ-cnQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +95,7 @@ an object of your house </string>
                                 <string key="text">To disable 
 your alarm!</string>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="0.5607843137254902" green="0.31764705882352939" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.5607843137254902" green="0.22370977286462529" blue="0.87058823529411766" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
