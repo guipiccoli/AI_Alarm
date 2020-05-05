@@ -37,7 +37,6 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
         
         // Index of the current page
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
-            print("NAS QUE PORRA")
             return nil
         }
         
@@ -57,7 +56,6 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource {
         
         //Index of the current page
         guard let viewControllerIndex = orderedViewControllers.firstIndex(of: viewController) else {
-            print("mas que cu")
             return nil
         }
         
