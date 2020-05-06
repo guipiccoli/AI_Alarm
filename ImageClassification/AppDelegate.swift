@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let defaults = UserDefaults.standard
     
     //Uncomment this line in order to debug the onboarding
-//    defaults.set(nil, forKey: "isFirstTime")
+    defaults.set(nil, forKey: "isFirstTime")
     
     if defaults.object(forKey: "isFirstTime") == nil{
         defaults.set(false, forKey:"isFirstTime")

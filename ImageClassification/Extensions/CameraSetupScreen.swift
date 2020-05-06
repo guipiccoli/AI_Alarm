@@ -18,7 +18,7 @@ class CameraSetupScreen: UIViewController {
         card.layer.cornerRadius = 10
         instructionsLabel.attributedText = NSMutableAttributedString()
         .normal("Create an object ", 18)
-        .bold("far from your room ", 18)
-        .normal("to find when turning off the alarm clock and point your camera at it", 18)
+        .bold("far from \n your room ", 18)
+        .normal("to find when turning \n off the alarm clock and point \n your camera at it", 18)
     }
 }
