@@ -19,9 +19,17 @@ class Database {
         return alarms ?? []
     }
     
+    static func getIdentifiers(from dateId: String) -> [String] {
+        return UserDefaults.standard.stringArray(forKey: dateId) ?? []
+    }
+    
     // MARK: - Setters
     static func updateMyAlarms(alarms: [Alarm]) {
         UserDefaults.standard.set(try? PropertyListEncoder().encode(alarms), forKey: MY_ALARMS)
+    }
+    
+    static func addIdentifiers(_ identifiers: [String], to dateId: String) {
+        UserDefaults.standard.set(identifiers, forKey: dateId)
     }
     
     private static func decode<T: Decodable>(_ data: Data?) -> T? {

@@ -103,7 +103,12 @@ class AddAlarmViewController: UIViewController {
         
         /// Parse data
         let weekDays: [WeekDay] = selectedWeekDays.map { WeekDay.from(tag: $0) }
-        let name: String? = titleTextField.text
+        
+        var name: String? = nil
+        if let title = titleTextField.text {
+            if !title.isEmpty { name = title }
+        }
+        
         let time: Date = timeDatePicker.date
         let isOn: Bool = true
         let pictureTrigger: String? = nil
@@ -117,6 +122,10 @@ class AddAlarmViewController: UIViewController {
         
         /// Save the new alarm list
         Database.updateMyAlarms(alarms: alarms)
+        
+        
+        /// Sets the notification
+        NotificationHelper.setAlarm(alarm)
     }
     
     

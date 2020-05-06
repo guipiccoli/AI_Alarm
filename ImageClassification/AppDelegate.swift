@@ -13,15 +13,33 @@
 // limitations under the License.
 
 import UIKit
+import NotificationCenter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-  var window: UIWindow?
+    
+    var window: UIWindow?
+    var audioPlayer = AudioPlayer()
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil ) -> Bool {
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        return true
+    }
+}
 
-  func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
-  ) -> Bool {
-    return true
-  }
+extension AppDelegate: UNUserNotificationCenterDelegate {
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+
+        audioPlayer.playAlarmSound()
+                
+        NotificationHelper.removePendingAlarms(for: response.notification.request.content.categoryIdentifier)
+        
+        // TO-DO: - Open object recognizer screen
+        
+        completionHandler() /// must be called
+    }
+    
 }

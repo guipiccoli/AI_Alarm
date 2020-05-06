@@ -19,6 +19,9 @@
 		7577D0C42460A64900708244 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7577D0C32460A64900708244 /* AlarmTableViewCell.swift */; };
 		75AE72162461DB96003E3399 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AE72152461DB96003E3399 /* AnyCodable.swift */; };
 		75AE72182461E04D003E3399 /* AddAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AE72172461E04D003E3399 /* AddAlarmViewController.swift */; };
+		75DDF53F24632A0900889975 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDF53E24632A0900889975 /* NotificationHelper.swift */; };
+		75DDF54424632F2300889975 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DDF54324632F2300889975 /* AudioPlayer.swift */; };
+		75DDF54824634B9000889975 /* Alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 75DDF54724634B9000889975 /* Alarm.mp3 */; };
 		AA16E5A22180843800D9E153 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA16E5A12180843700D9E153 /* InfoCell.swift */; };
 		AA5B0EEA217E5E300026FF23 /* InferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */; };
 		AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B0EEB217E70000026FF23 /* CurvedView.swift */; };
@@ -49,6 +52,9 @@
 		7577D0C32460A64900708244 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		75AE72152461DB96003E3399 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
 		75AE72172461E04D003E3399 /* AddAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAlarmViewController.swift; sourceTree = "<group>"; };
+		75DDF53E24632A0900889975 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
+		75DDF54324632F2300889975 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		75DDF54724634B9000889975 /* Alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Alarm.mp3; sourceTree = "<group>"; };
 		AA16E5A12180843700D9E153 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InferenceViewController.swift; sourceTree = "<group>"; };
 		AA5B0EEB217E70000026FF23 /* CurvedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
@@ -102,6 +108,7 @@
 		752B05042460A71400697D26 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				75DDF54024632DC100889975 /* Sounds */,
 				752B05052460A71F00697D26 /* Fonts */,
 			);
 			path = Assets;
@@ -162,8 +169,18 @@
 			children = (
 				7577D0BF246094B000708244 /* Database.swift */,
 				75AE72152461DB96003E3399 /* AnyCodable.swift */,
+				75DDF53E24632A0900889975 /* NotificationHelper.swift */,
+				75DDF54324632F2300889975 /* AudioPlayer.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		75DDF54024632DC100889975 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				75DDF54724634B9000889975 /* Alarm.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		AA16E5A02180843700D9E153 /* Cells */ = {
@@ -336,6 +353,7 @@
 				7537A4042460AA680057AD49 /* SFMono-Regular.otf in Resources */,
 				AAE79E64213521DB00E7AC1F /* LaunchScreen.storyboard in Resources */,
 				AAE79E61213521DB00E7AC1F /* Assets.xcassets in Resources */,
+				75DDF54824634B9000889975 /* Alarm.mp3 in Resources */,
 				752B050B2460A7AD00697D26 /* SFProDisplay-Thin.ttf in Resources */,
 				7577D0C224609F9300708244 /* Alarms.storyboard in Resources */,
 				752B05072460A76B00697D26 /* SFProDisplay-Regular.ttf in Resources */,
@@ -415,6 +433,7 @@
 				AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */,
 				7577D0C0246094B000708244 /* Database.swift in Sources */,
 				75AE72162461DB96003E3399 /* AnyCodable.swift in Sources */,
+				75DDF53F24632A0900889975 /* NotificationHelper.swift in Sources */,
 				AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */,
 				AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */,
 				AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */,
@@ -422,6 +441,7 @@
 				AAAB096E218981FA0015A1F2 /* CVPixelBufferExtension.swift in Sources */,
 				AA16E5A22180843800D9E153 /* InfoCell.swift in Sources */,
 				AABFCBB2213FE0B100C0A67B /* ModelDataHandler.swift in Sources */,
+				75DDF54424632F2300889975 /* AudioPlayer.swift in Sources */,
 				7537A4092460B8360057AD49 /* Date+Extensions.swift in Sources */,
 				7577D0BD2460883700708244 /* Alarm.swift in Sources */,
 				75AE72182461E04D003E3399 /* AddAlarmViewController.swift in Sources */,

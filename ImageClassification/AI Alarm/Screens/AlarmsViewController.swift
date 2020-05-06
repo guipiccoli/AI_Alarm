@@ -26,6 +26,7 @@ class AlarmsViewController: UIViewController {
         tableView.dataSource = self
         configureNavigationBar()
         reloadData()
+        askForNotificationPermition()
     }
     
     // MARK: - Layout
@@ -46,6 +47,22 @@ class AlarmsViewController: UIViewController {
     private func fetchAlarms() {
         self.alarms = Database.getMyAlarms()
     }
+    
+    
+    // MARK: - Private Methods
+    private func askForNotificationPermition() {
+        
+        let center = UNUserNotificationCenter.current()
+
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Permition granted")
+            } else {
+                print("Permition denied")
+            }
+        }
+    }
+    
 
     // MARK: - Outlet Actions
     @IBAction func editButtonClick(_ sender: UIBarButtonItem) {

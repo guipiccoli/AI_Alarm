@@ -19,6 +19,13 @@ extension Date {
         
         return formatter.string(from: self)
     }
+    
+    func toString( dateFormat format  : String ) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
+    }
 
     func hours(sinceDate: Date) -> Int? {
         return Calendar.current.dateComponents([.hour], from: sinceDate, to: self).hour
