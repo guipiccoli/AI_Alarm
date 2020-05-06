@@ -50,10 +50,11 @@ enum WeekDay: String, Codable {
 
 struct Alarm: Codable {
     
+    let id = UUID()
     let name: String?
     let weekDays: [WeekDay]
     let time: Date
-    let isOn: Bool
+    var isOn: Bool
     let pictureTrigger: String?
     
     // MARK: - Sample

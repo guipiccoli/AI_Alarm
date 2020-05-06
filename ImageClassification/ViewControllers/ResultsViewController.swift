@@ -8,9 +8,17 @@
 
 import UIKit
 
+protocol ResultsViewControllerDelegate: class {
+    
+    func didScanObject()
+    
+}
+
 class ResultsViewController: UIViewController {
     
     var inferenceResult: Result? = nil
+    weak var delegate: ResultsViewControllerDelegate?
+    
     @IBOutlet weak var resultTableView: UITableView!
     
     @IBOutlet weak var confirmButtonOutlet: UIButton!
@@ -64,13 +72,7 @@ class ResultsViewController: UIViewController {
     @IBAction func confirmObjectSelection(_ sender: UIButton) {
         guard let object = resultTuple?.name else { return } // TODO: - Deal with error
         Database.updateObject(object)
-        
-        
-        
-        let storyboard = UIStoryboard(name: "Alarms", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "AlarmsNavigationController") as! UINavigationController
-        UIApplication.shared.keyWindow?.rootViewController = viewController
-        UIApplication.shared.keyWindow?.makeKeyAndVisible()
+        delegate?.didScanObject()
     }
     
     func turnAlarmOff() {
@@ -78,10 +80,7 @@ class ResultsViewController: UIViewController {
         AppDelegate.audioPlayer.stopAlarmSound()
         print("found the object")
         
-        let storyboard = UIStoryboard(name: "Alarms", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "AlarmsNavigationController") as! UINavigationController
-        UIApplication.shared.keyWindow?.rootViewController = viewController
-        UIApplication.shared.keyWindow?.makeKeyAndVisible()
+        delegate?.didScanObject()
     }
 }
 

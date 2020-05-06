@@ -25,27 +25,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = self
         
-        Database.reset()
+        // Database.reset()
             
             /// Uncomment this line in order to debug the onboarding
             // Database.updateIsFirstTime(nil)
             /// ------------------------------------------------
             
+        guard let window = self.window else { return true }
+        
         if Database.getIsFirstTime() {
             
             Database.updateIsFirstTime(false)
             
             let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "PageViewInitialController") as! OnboardingPageViewController
-            self.window?.rootViewController = viewController
-            self.window?.makeKeyAndVisible()
+            window.rootViewController = viewController
+            
+            let options: UIView.AnimationOptions = .transitionCrossDissolve
+            let duration: TimeInterval = 0.5
+
+            UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
         }
+            
         else {
             
             let storyboard = UIStoryboard(name: "Alarms", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "AlarmsNavigationController") as! UINavigationController
-            self.window?.rootViewController = viewController
-            self.window?.makeKeyAndVisible()
+            window.rootViewController = viewController
+
+            let options: UIView.AnimationOptions = .transitionCrossDissolve
+            let duration: TimeInterval = 0.5
+
+            UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
         }
         
         
@@ -58,9 +69,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
 
         AppDelegate.audioPlayer.playAlarmSound()
-                
-        NotificationHelper.removePendingAlarms(for: response.notification.request.content.categoryIdentifier)
-        
+                        
         // TO-DO: - Open object recognizer screen
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "mainCameraScreen") as! ViewController

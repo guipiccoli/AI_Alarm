@@ -10,5 +10,6 @@ target 'ImageClassification' do
 
 
    pod 'AnyCodable'
+   pod 'lottie-ios'
 
 end

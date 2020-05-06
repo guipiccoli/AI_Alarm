@@ -45,7 +45,10 @@ class AlarmsViewController: UIViewController {
     }
     
     private func fetchAlarms() {
-        self.alarms = Database.getMyAlarms()
+        
+        let alarms = Database.getMyAlarms()
+              
+        self.alarms = alarms.sorted(by: { $0.time.compare($1.time) == .orderedAscending })
     }
     
     
@@ -119,7 +122,10 @@ extension AlarmsViewController: UITableViewDelegate {
         
         if editingStyle == .delete {
             
-            alarms.remove(at: indexPath.row)
+            let alarm = alarms.remove(at: indexPath.row)
+            
+            NotificationHelper.removeAlarm(alarm)
+            
             Database.updateMyAlarms(alarms: alarms)
             
             if alarms.count > 0 {

@@ -54,6 +54,7 @@ class AlarmTableViewCell: UITableViewCell {
         for day in alarm.weekDays {
             
             switch day {
+                
             case .monday: mondayLabel.isHidden = false
             case .tuesday: tuesdayLabel.isHidden = false
             case .wednesday: wednesdayLabel.isHidden = false
@@ -61,8 +62,8 @@ class AlarmTableViewCell: UITableViewCell {
             case .friday: fridayLabel.isHidden = false
             case .saturday: saturdayLabel.isHidden = false
             case .sunday: sundayLabel.isHidden = false
+                
             }
-            
         }
     }
     
@@ -70,6 +71,7 @@ class AlarmTableViewCell: UITableViewCell {
         
         guard let hourCount = hourCount else { return "" }
         
+        if hourCount < 0 { return "" }
         if hourCount == 0 { return "less than an hour remaining" }
         if hourCount == 1 { return "1 hour remaining" }
         
@@ -79,7 +81,21 @@ class AlarmTableViewCell: UITableViewCell {
     // MARK: - Outlet Actions
     @IBAction func isOnSwitchValueChanged(_ sender: Any) {
         
-        guard let alarmIdentifier = alarm?.time.toString(dateFormat: "yyyy-MM-dd HH:mm:ss") else { return }
-        NotificationHelper.removePendingAlarms(for: alarmIdentifier)
+        guard var alarm = self.alarm else { return }
+        
+        alarm.isOn.toggle()
+
+        NotificationHelper.removeAlarm(alarm)
+        
+        let alarms = Database.getMyAlarms()
+        var newAlarms = alarms.filter { $0.time != alarm.time }
+        
+        newAlarms.append(alarm)
+        
+        Database.updateMyAlarms(alarms: newAlarms)
+        
+        if alarm.isOn {
+            NotificationHelper.setAlarm(alarm)
+        }
     }
 }

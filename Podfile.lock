@@ -1,24 +1,28 @@
 PODS:
   - AnyCodable (1.2.0)
+  - lottie-ios (3.1.6)
   - TensorFlowLiteC (2.1.0)
   - TensorFlowLiteSwift (2.1.0):
     - TensorFlowLiteC (= 2.1.0)
 
 DEPENDENCIES:
   - AnyCodable
+  - lottie-ios
   - TensorFlowLiteSwift
 
 SPEC REPOS:
   trunk:
     - AnyCodable
+    - lottie-ios
     - TensorFlowLiteC
     - TensorFlowLiteSwift
 
 SPEC CHECKSUMS:
   AnyCodable: bb05e19c676899e0fd511652f2d83bfa044e2503
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   TensorFlowLiteC: 215603d4426d93810eace5947e317389554a4b66
   TensorFlowLiteSwift: 9d8137f18d5ac30ca89bba4fbe118e0949ac5743
 
-PODFILE CHECKSUM: 0fddedd0ad0a099da19512a85dc63d564ae8b976
+PODFILE CHECKSUM: adb8036bfe9d8bc44de9c60eb3c615144785dedb
 
 COCOAPODS: 1.9.1
