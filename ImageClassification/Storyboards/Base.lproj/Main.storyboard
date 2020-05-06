@@ -323,6 +323,8 @@
                         <viewLayoutGuide key="safeArea" id="Qfc-bc-1Uk"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButtonOutlet" destination="6Rz-hK-FWP" id="jm9-S2-YQ6"/>
+                        <outlet property="confirmButtonOutlet" destination="Isi-5f-eVw" id="cyu-WL-pba"/>
                         <outlet property="resultTableView" destination="ZTz-cv-Fn8" id="Kfp-7v-xIt"/>
                     </connections>
                 </viewController>

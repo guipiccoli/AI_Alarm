@@ -13,6 +13,11 @@ class ResultsViewController: UIViewController {
     var inferenceResult: Result? = nil
     @IBOutlet weak var resultTableView: UITableView!
     
+    @IBOutlet weak var confirmButtonOutlet: UIButton!
+    @IBOutlet weak var cancelButtonOutlet: UIButton!
+    
+    var isShowingButtons: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +26,16 @@ class ResultsViewController: UIViewController {
         
         let info = displayStringsForResults(position: 0)
         print(info)
+        
+        if isShowingButtons {
+            confirmButtonOutlet.isHidden = false
+            cancelButtonOutlet.isHidden = false
+        }
+        else {
+            confirmButtonOutlet.isHidden = true
+            cancelButtonOutlet.isHidden = true
+        }
+        
     }
     
     func displayStringsForResults(position: Int) -> (name: String, precision: String) {
