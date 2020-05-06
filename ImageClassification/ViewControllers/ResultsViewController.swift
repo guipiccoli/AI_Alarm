@@ -65,7 +65,12 @@ class ResultsViewController: UIViewController {
         guard let object = resultTuple?.name else { return } // TODO: - Deal with error
         Database.updateObject(object)
         
-        // TODO: - Open alarms Storyboard
+        
+        
+        let storyboard = UIStoryboard(name: "Alarms", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "AlarmsNavigationController") as! UINavigationController
+        UIApplication.shared.keyWindow?.rootViewController = viewController
+        UIApplication.shared.keyWindow?.makeKeyAndVisible()
     }
     
     func turnAlarmOff() {

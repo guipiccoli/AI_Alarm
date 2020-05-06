@@ -14,6 +14,13 @@ class Database {
     private static let MY_ALARMS = "my_alarms"
     private static let OBJECT = "object"
     private static let IS_FIRST_TIME = "is_first_time"
+    
+    // MARK: - Hand Granade
+    static func reset() {
+        updateMyAlarms(alarms: [])
+        updateIsFirstTime(true)
+        updateObject(nil)
+    }
 
     // MARK: - Getters
     static func getMyAlarms() -> [Alarm] {
@@ -30,7 +37,7 @@ class Database {
     }
     
     static func getIsFirstTime() -> Bool {
-        return UserDefaults.standard.bool(forKey: IS_FIRST_TIME) ?? true
+        return UserDefaults.standard.bool(forKey: IS_FIRST_TIME)
     }
     
     // MARK: - Setters

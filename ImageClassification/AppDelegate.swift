@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = self
         
+        Database.reset()
             
             /// Uncomment this line in order to debug the onboarding
             // Database.updateIsFirstTime(nil)
@@ -35,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Database.updateIsFirstTime(false)
             
             let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "alarmsNavigationController") as! UINavigationController
+            let viewController = storyboard.instantiateViewController(withIdentifier: "PageViewInitialController") as! OnboardingPageViewController
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()
         }
