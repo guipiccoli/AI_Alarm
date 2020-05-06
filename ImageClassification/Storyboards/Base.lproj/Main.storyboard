@@ -71,6 +71,12 @@
                                     <action selector="onClickResumeButton:" destination="7aX-iP-Lxp" eventType="touchUpInside" id="Tqc-dh-pm3"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESLIGAR ALARME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyu-bt-Qlm">
+                                <rect key="frame" x="86.5" y="320.5" width="202" height="26.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -83,10 +89,13 @@
                             <constraint firstItem="Ijl-bc-mDl" firstAttribute="bottom" secondItem="lZs-Kh-vPx" secondAttribute="bottom" id="XAo-78-Zow"/>
                             <constraint firstItem="uPJ-nc-1Tt" firstAttribute="leading" secondItem="Ijl-bc-mDl" secondAttribute="leading" constant="20" id="ZM3-r2-dKc"/>
                             <constraint firstItem="Ijl-bc-mDl" firstAttribute="trailing" secondItem="uPJ-nc-1Tt" secondAttribute="trailing" constant="20" id="app-nt-mDz"/>
+                            <constraint firstItem="eyu-bt-Qlm" firstAttribute="centerY" secondItem="pbw-Hb-35N" secondAttribute="centerY" id="hvE-fL-UZf"/>
+                            <constraint firstItem="eyu-bt-Qlm" firstAttribute="centerX" secondItem="pbw-Hb-35N" secondAttribute="centerX" id="pOa-wT-Bag"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ijl-bc-mDl"/>
                     </view>
                     <connections>
+                        <outlet property="alarmLabel" destination="eyu-bt-Qlm" id="EB4-hj-dVd"/>
                         <outlet property="bottomSheetView" destination="ddd-K8-X1g" id="WY6-8z-eIc"/>
                         <outlet property="cameraUnavailableLabel" destination="uPJ-nc-1Tt" id="xlw-29-JPB"/>
                         <outlet property="previewView" destination="lZs-Kh-vPx" id="4Ms-eq-S68"/>

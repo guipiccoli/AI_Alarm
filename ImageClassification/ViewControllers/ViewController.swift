@@ -22,7 +22,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var cameraUnavailableLabel: UILabel!
   @IBOutlet weak var resumeButton: UIButton!
   @IBOutlet weak var bottomSheetView: CurvedView!
-
+    @IBOutlet weak var alarmLabel: UILabel!
+    
   @IBOutlet weak var bottomSheetViewBottomSpace: NSLayoutConstraint!
   @IBOutlet weak var bottomSheetStateImageView: UIImageView!
   // MARK: Constants

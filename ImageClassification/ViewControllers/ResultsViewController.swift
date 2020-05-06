@@ -16,7 +16,9 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var confirmButtonOutlet: UIButton!
     @IBOutlet weak var cancelButtonOutlet: UIButton!
     
-    var isRegisteringObject: Bool = true
+    var isRegisteringObject: Bool = false
+    
+    var resultTuple: (name: String, precision: String)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +37,6 @@ class ResultsViewController: UIViewController {
             confirmButtonOutlet.isHidden = true
             cancelButtonOutlet.isHidden = true
         }
-        
     }
     
     func displayStringsForResults(position: Int) -> (name: String, precision: String) {
@@ -60,9 +61,13 @@ class ResultsViewController: UIViewController {
         return (fieldName, info)
     }
     
-    
     @IBAction func confirmObjectSelection(_ sender: UIButton) {
-        UserDefaults.standard.set(displayStringsForResults(position: 1).name, forKey: "objectSaved") 
+        UserDefaults.standard.set(resultTuple?.name, forKey: "objectSaved")
+    }
+    
+    func turnAlarmOff() {
+        guard let parentVC = self.parent as? ViewController else {return}
+        parentVC.alarmLabel.isHidden = false
     }
 }
 
@@ -73,21 +78,30 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as? ResultTableViewCell
-        cell?.itemName.text = "alo"
-        cell?.itemAccuracy.text = "100%"
-        
         var fieldName = ""
         var info = ""
         
         let tuple = displayStringsForResults(position: indexPath.row)
+        resultTuple = tuple
+        
         fieldName = tuple.name
         info = tuple.precision
 
-            
         cell?.itemName.text = fieldName
         cell?.itemAccuracy.text = info
-        return cell ?? UITableViewCell()
         
+        if !isRegisteringObject {
+            guard let objectSaved = UserDefaults.standard.string(forKey: "objectSaved") else {
+                return cell ?? UITableViewCell()
+            }
+            
+            if tuple.name == objectSaved {
+                turnAlarmOff()
+            }
+        }
+        
+        return cell ?? UITableViewCell()
+
     }
     
 
