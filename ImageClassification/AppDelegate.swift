@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let defaults = UserDefaults.standard
     
     //Uncomment this line in order to debug the onboarding
-    defaults.set(nil, forKey: "isFirstTime")
+//    defaults.set(nil, forKey: "isFirstTime")
     
     if defaults.object(forKey: "isFirstTime") == nil{
         defaults.set(false, forKey:"isFirstTime")
-        let storyboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "PageViewInitialController") as! OnboardingPageViewController
         self.window?.rootViewController = viewController
         self.window?.makeKeyAndVisible()

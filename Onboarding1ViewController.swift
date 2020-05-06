@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Onboarding1: ViewController {
+class Onboarding1: UIViewController {
     @IBOutlet weak var startingMessage: UILabel!
     
     override func viewDidLoad() {
