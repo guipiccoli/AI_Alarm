@@ -19,7 +19,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Cba-nz-Zus">
             <objects>
-                <navigationController id="bsc-bC-6oK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AlarmsNavigationController" id="bsc-bC-6oK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eyb-xH-dhl">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -35,7 +35,7 @@
         <!--Alarms-->
         <scene sceneID="afg-mC-ua4">
             <objects>
-                <viewController title="Alarms" id="2PF-9e-3jQ" customClass="AlarmsViewController" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmsViewController" title="Alarms" id="2PF-9e-3jQ" customClass="AlarmsViewController" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iJd-4k-lnQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

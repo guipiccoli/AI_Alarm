@@ -12,7 +12,9 @@ class Database {
     
     // MARK: - Identifiers
     private static let MY_ALARMS = "my_alarms"
-    
+    private static let OBJECT = "object"
+    private static let IS_FIRST_TIME = "is_first_time"
+
     // MARK: - Getters
     static func getMyAlarms() -> [Alarm] {
         let alarms: [Alarm]? = decode(UserDefaults.standard.data(forKey: MY_ALARMS))
@@ -21,6 +23,14 @@ class Database {
     
     static func getIdentifiers(from dateId: String) -> [String] {
         return UserDefaults.standard.stringArray(forKey: dateId) ?? []
+    }
+    
+    static func getObject() -> String? {
+        return UserDefaults.standard.string(forKey: OBJECT)
+    }
+    
+    static func getIsFirstTime() -> Bool {
+        return UserDefaults.standard.bool(forKey: IS_FIRST_TIME) ?? true
     }
     
     // MARK: - Setters
@@ -32,6 +42,15 @@ class Database {
         UserDefaults.standard.set(identifiers, forKey: dateId)
     }
     
+    static func updateObject(_ object: String?) {
+        UserDefaults.standard.set(object, forKey: OBJECT)
+    }
+    
+    static func updateIsFirstTime(_ isFirstTime: Bool?) {
+        UserDefaults.standard.set(isFirstTime, forKey: IS_FIRST_TIME)
+    }
+    
+    // MARK: - Coding
     private static func decode<T: Decodable>(_ data: Data?) -> T? {
         guard let data = data else { return nil }
         return try? PropertyListDecoder().decode(T.self, from: data)

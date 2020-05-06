@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0409864C2463242F00F7A55F /* CameraSetupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0409864B2463242F00F7A55F /* CameraSetupScreen.swift */; };
+		043314E12461D1A6002F0221 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043314E02461D1A6002F0221 /* OnboardingPageViewController.swift */; };
+		045CA3B324608D2D00D3243F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045CA3B224608D2D00D3243F /* Onboarding.storyboard */; };
+		045CA3B52460951300D3243F /* Onboarding1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CA3B42460951300D3243F /* Onboarding1ViewController.swift */; };
+		045CA3B72460975F00D3243F /* NSMutableAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045CA3B62460975F00D3243F /* NSMutableAttributedString+Extensions.swift */; };
 		752B05072460A76B00697D26 /* SFProDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 752B05062460A76B00697D26 /* SFProDisplay-Regular.ttf */; };
 		752B05092460A78D00697D26 /* SFProDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 752B05082460A78D00697D26 /* SFProDisplay-Bold.ttf */; };
 		752B050B2460A7AD00697D26 /* SFProDisplay-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 752B050A2460A7AC00697D26 /* SFProDisplay-Thin.ttf */; };
@@ -36,10 +41,17 @@
 		AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79E942135237A00E7AC1F /* ViewController.swift */; };
 		AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79E982135268800E7AC1F /* PreviewView.swift */; };
 		AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79E992135268800E7AC1F /* CameraFeedManager.swift */; };
+		E797F9022460912000F1D359 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F9012460912000F1D359 /* ResultTableViewCell.swift */; };
+		E7DAF13E245B69BC0073E8C2 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DAF13D245B69BC0073E8C2 /* ResultsViewController.swift */; };
 		FA788B881E6A78BDBE204368 /* Pods_ImageClassification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19D0F9B3832319248B9C534 /* Pods_ImageClassification.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0409864B2463242F00F7A55F /* CameraSetupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CameraSetupScreen.swift; path = ImageClassification/Extensions/CameraSetupScreen.swift; sourceTree = SOURCE_ROOT; };
+		043314E02461D1A6002F0221 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingPageViewController.swift; path = ImageClassification/Extensions/OnboardingPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		045CA3B224608D2D00D3243F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = SOURCE_ROOT; };
+		045CA3B42460951300D3243F /* Onboarding1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding1ViewController.swift; sourceTree = SOURCE_ROOT; };
+		045CA3B62460975F00D3243F /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		752B05062460A76B00697D26 /* SFProDisplay-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		752B05082460A78D00697D26 /* SFProDisplay-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		752B050A2460A7AC00697D26 /* SFProDisplay-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFProDisplay-Thin.ttf"; sourceTree = "<group>"; };
@@ -74,6 +86,8 @@
 		AF4302742A60273F487FDE66 /* Pods-ImageClassification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassification.release.xcconfig"; path = "Target Support Files/Pods-ImageClassification/Pods-ImageClassification.release.xcconfig"; sourceTree = "<group>"; };
 		C1082DD6654FFCDAEA2E97A3 /* Pods-ImageClassification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassification.debug.xcconfig"; path = "Target Support Files/Pods-ImageClassification/Pods-ImageClassification.debug.xcconfig"; sourceTree = "<group>"; };
 		C19D0F9B3832319248B9C534 /* Pods_ImageClassification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageClassification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E797F9012460912000F1D359 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		E7DAF13D245B69BC0073E8C2 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +153,7 @@
 				7537A4072460B8270057AD49 /* Extensions */,
 				752B05042460A71400697D26 /* Assets */,
 				7577D0BE2460949800708244 /* Util */,
+				E797F9002460910200F1D359 /* Cell */,
 				7577D0BA2460866800708244 /* Models */,
 				7577D0BB2460866D00708244 /* Screens */,
 			);
@@ -160,6 +175,10 @@
 				7577D0C32460A64900708244 /* AlarmTableViewCell.swift */,
 				7537A4052460AC3B0057AD49 /* AlarmsViewController.swift */,
 				75AE72172461E04D003E3399 /* AddAlarmViewController.swift */,
+				045CA3B224608D2D00D3243F /* Onboarding.storyboard */,
+				045CA3B42460951300D3243F /* Onboarding1ViewController.swift */,
+				043314E02461D1A6002F0221 /* OnboardingPageViewController.swift */,
+				0409864B2463242F00F7A55F /* CameraSetupScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -221,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				AAAB096D218981FA0015A1F2 /* CVPixelBufferExtension.swift */,
+				045CA3B62460975F00D3243F /* NSMutableAttributedString+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -275,6 +295,7 @@
 			children = (
 				AAE79E942135237A00E7AC1F /* ViewController.swift */,
 				AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */,
+				E7DAF13D245B69BC0073E8C2 /* ResultsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -286,6 +307,14 @@
 				AAE79E992135268800E7AC1F /* CameraFeedManager.swift */,
 			);
 			path = "Camera Feed";
+			sourceTree = "<group>";
+		};
+		E797F9002460910200F1D359 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E797F9012460912000F1D359 /* ResultTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +387,7 @@
 				7577D0C224609F9300708244 /* Alarms.storyboard in Resources */,
 				752B05072460A76B00697D26 /* SFProDisplay-Regular.ttf in Resources */,
 				AA5FEB7E21355CCC00F9BD4B /* labels.txt in Resources */,
+				045CA3B324608D2D00D3243F /* Onboarding.storyboard in Resources */,
 				AAE79E5F213521DA00E7AC1F /* Main.storyboard in Resources */,
 				AA5FEB7D21355CCC00F9BD4B /* mobilenet_quant_v1_224.tflite in Resources */,
 				752B05092460A78D00697D26 /* SFProDisplay-Bold.ttf in Resources */,
@@ -430,16 +460,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E797F9022460912000F1D359 /* ResultTableViewCell.swift in Sources */,
 				AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */,
 				7577D0C0246094B000708244 /* Database.swift in Sources */,
 				75AE72162461DB96003E3399 /* AnyCodable.swift in Sources */,
 				75DDF53F24632A0900889975 /* NotificationHelper.swift in Sources */,
 				AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */,
+				045CA3B52460951300D3243F /* Onboarding1ViewController.swift in Sources */,
 				AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */,
+				043314E12461D1A6002F0221 /* OnboardingPageViewController.swift in Sources */,
+				E7DAF13E245B69BC0073E8C2 /* ResultsViewController.swift in Sources */,
 				AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */,
 				7537A4062460AC3B0057AD49 /* AlarmsViewController.swift in Sources */,
 				AAAB096E218981FA0015A1F2 /* CVPixelBufferExtension.swift in Sources */,
+				045CA3B72460975F00D3243F /* NSMutableAttributedString+Extensions.swift in Sources */,
 				AA16E5A22180843800D9E153 /* InfoCell.swift in Sources */,
+				0409864C2463242F00F7A55F /* CameraSetupScreen.swift in Sources */,
 				AABFCBB2213FE0B100C0A67B /* ModelDataHandler.swift in Sources */,
 				75DDF54424632F2300889975 /* AudioPlayer.swift in Sources */,
 				7537A4092460B8360057AD49 /* Date+Extensions.swift in Sources */,

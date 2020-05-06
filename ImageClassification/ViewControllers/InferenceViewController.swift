@@ -103,17 +103,6 @@ class InferenceViewController: UIViewController {
     }
     
   }
-
-  // MARK: Buttion Actions
-  /**
-   Delegate the change of number of threads to View Controller and change the stepper display.
-   */
-  @IBAction func onClickThreadStepper(_ sender: Any) {
-
-    delegate?.didChangeThreadCount(to: Int(threadStepper.value))
-    currentThreadCount = Int(threadStepper.value)
-    stepperValueLabel.text = "\(currentThreadCount)"
-  }
 }
 
 // MARK: UITableView Data Source
@@ -190,6 +179,10 @@ extension InferenceViewController: UITableViewDelegate, UITableViewDataSource {
       if indexPath.row == 0 {
         font = highlightedFont
         color = infoTextColor
+        
+        if fieldName == "toilet tissue" {
+            print("ACERTOOO")
+        }
       }
       else {
         font = infoFont

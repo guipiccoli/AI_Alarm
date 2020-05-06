@@ -19,11 +19,34 @@ import NotificationCenter
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var audioPlayer = AudioPlayer()
+    public static var audioPlayer = AudioPlayer()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil ) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
+        
+            
+            /// Uncomment this line in order to debug the onboarding
+            // Database.updateIsFirstTime(nil)
+            /// ------------------------------------------------
+            
+        if Database.getIsFirstTime() {
+            
+            Database.updateIsFirstTime(false)
+            
+            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "alarmsNavigationController") as! UINavigationController
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
+        else {
+            
+            let storyboard = UIStoryboard(name: "Alarms", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "AlarmsNavigationController") as! UINavigationController
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         
         return true
     }
@@ -33,13 +56,18 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
 
-        audioPlayer.playAlarmSound()
+        AppDelegate.audioPlayer.playAlarmSound()
                 
         NotificationHelper.removePendingAlarms(for: response.notification.request.content.categoryIdentifier)
         
         // TO-DO: - Open object recognizer screen
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "mainCameraScreen") as! ViewController
+        viewController.isRegisteringObject  = false
+        self.window?.rootViewController = viewController
+        self.window?.makeKeyAndVisible()
         
         completionHandler() /// must be called
     }
-    
 }
+
