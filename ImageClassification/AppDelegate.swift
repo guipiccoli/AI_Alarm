@@ -22,6 +22,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
   ) -> Bool {
+    
+    let defaults = UserDefaults.standard
+    
+    //Uncomment this line in order to debug the onboarding
+//    defaults.set(nil, forKey: "isFirstTime")
+    
+    if defaults.object(forKey: "isFirstTime") == nil{
+        defaults.set(false, forKey:"isFirstTime")
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "PageViewInitialController") as! OnboardingPageViewController
+        self.window?.rootViewController = viewController
+        self.window?.makeKeyAndVisible()
+    }
     return true
   }
 }

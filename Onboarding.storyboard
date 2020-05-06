@@ -11,7 +11,7 @@
         <!--Onboarding Page View Controller-->
         <scene sceneID="qvq-WM-aRh">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Lrq-Z6-LZG" customClass="OnboardingPageViewController" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageViewInitialController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Lrq-Z6-LZG" customClass="OnboardingPageViewController" customModule="ImageClassification" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X1j-v1-whh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="489" y="-726"/>
