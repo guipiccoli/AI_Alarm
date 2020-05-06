@@ -16,7 +16,7 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var confirmButtonOutlet: UIButton!
     @IBOutlet weak var cancelButtonOutlet: UIButton!
     
-    var isShowingButtons: Bool = true
+    var isRegisteringObject: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ class ResultsViewController: UIViewController {
         let info = displayStringsForResults(position: 0)
         print(info)
         
-        if isShowingButtons {
+        if isRegisteringObject {
             confirmButtonOutlet.isHidden = false
             cancelButtonOutlet.isHidden = false
         }
