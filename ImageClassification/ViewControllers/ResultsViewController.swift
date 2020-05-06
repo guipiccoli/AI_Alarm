@@ -16,7 +16,7 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var confirmButtonOutlet: UIButton!
     @IBOutlet weak var cancelButtonOutlet: UIButton!
     
-    var isRegisteringObject: Bool = false
+    var isRegisteringObject: Bool = true
     
     var resultTuple: (name: String, precision: String)?
     
