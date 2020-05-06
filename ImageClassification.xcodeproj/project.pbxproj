@@ -26,6 +26,8 @@
 		AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79E942135237A00E7AC1F /* ViewController.swift */; };
 		AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79E982135268800E7AC1F /* PreviewView.swift */; };
 		AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE79E992135268800E7AC1F /* CameraFeedManager.swift */; };
+		E797F9022460912000F1D359 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E797F9012460912000F1D359 /* ResultTableViewCell.swift */; };
+		E7DAF13E245B69BC0073E8C2 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DAF13D245B69BC0073E8C2 /* ResultsViewController.swift */; };
 		FA788B881E6A78BDBE204368 /* Pods_ImageClassification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19D0F9B3832319248B9C534 /* Pods_ImageClassification.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		AF4302742A60273F487FDE66 /* Pods-ImageClassification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassification.release.xcconfig"; path = "Target Support Files/Pods-ImageClassification/Pods-ImageClassification.release.xcconfig"; sourceTree = "<group>"; };
 		C1082DD6654FFCDAEA2E97A3 /* Pods-ImageClassification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageClassification.debug.xcconfig"; path = "Target Support Files/Pods-ImageClassification/Pods-ImageClassification.debug.xcconfig"; sourceTree = "<group>"; };
 		C19D0F9B3832319248B9C534 /* Pods_ImageClassification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageClassification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E797F9012460912000F1D359 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		E7DAF13D245B69BC0073E8C2 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		7577D0B92460865F00708244 /* AI Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				E797F9002460910200F1D359 /* Cell */,
 				7577D0BA2460866800708244 /* Models */,
 				7577D0BB2460866D00708244 /* Screens */,
 			);
@@ -205,6 +210,7 @@
 			children = (
 				AAE79E942135237A00E7AC1F /* ViewController.swift */,
 				AA5B0EE9217E5E300026FF23 /* InferenceViewController.swift */,
+				E7DAF13D245B69BC0073E8C2 /* ResultsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -216,6 +222,14 @@
 				AAE79E992135268800E7AC1F /* CameraFeedManager.swift */,
 			);
 			path = "Camera Feed";
+			sourceTree = "<group>";
+		};
+		E797F9002460910200F1D359 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E797F9012460912000F1D359 /* ResultTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,11 +351,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E797F9022460912000F1D359 /* ResultTableViewCell.swift in Sources */,
 				AAE79E952135237A00E7AC1F /* ViewController.swift in Sources */,
 				AA5B0EEC217E70000026FF23 /* CurvedView.swift in Sources */,
 				045CA3B52460951300D3243F /* Onboarding1ViewController.swift in Sources */,
 				AAE79E9A2135268800E7AC1F /* PreviewView.swift in Sources */,
 				043314E12461D1A6002F0221 /* OnboardingPageViewController.swift in Sources */,
+				E7DAF13E245B69BC0073E8C2 /* ResultsViewController.swift in Sources */,
 				AAE79E9B2135268800E7AC1F /* CameraFeedManager.swift in Sources */,
 				AAAB096E218981FA0015A1F2 /* CVPixelBufferExtension.swift in Sources */,
 				045CA3B72460975F00D3243F /* NSMutableAttributedString+Extensions.swift in Sources */,
@@ -498,7 +514,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66X93R6BN6;
+				DEVELOPMENT_TEAM = RL63GUXBB4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -525,7 +541,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 66X93R6BN6;
+				DEVELOPMENT_TEAM = RL63GUXBB4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
