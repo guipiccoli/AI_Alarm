@@ -12,6 +12,7 @@ import UIKit
 class CameraSetupScreen: UIViewController {
     @IBOutlet weak var card: UIView!
     @IBOutlet weak var instructionsLabel: UILabel!
+
     
     override func viewDidLoad() {
         card.layer.cornerRadius = 10

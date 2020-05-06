@@ -175,37 +175,44 @@ your alarm!</string>
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMH-a8-mEI">
-                                <rect key="frame" x="18.5" y="170" width="377" height="466"/>
+                                <rect key="frame" x="18.5" y="170.5" width="377" height="465.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CameraIcon" translatesAutoresizingMaskIntoConstraints="NO" id="FOn-Rg-TDZ">
-                                        <rect key="frame" x="85.5" y="176.5" width="206" height="207"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p0-9P-zQ6">
-                                        <rect key="frame" x="153" y="312.5" width="71" height="41"/>
-                                        <string key="text">Choose
-an object</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose an object far from  your room to find when turning  off the alarm clock and point  your camera at it" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LP-Y6-SF4">
-                                        <rect key="frame" x="49.5" y="74" width="278" height="81.5"/>
+                                        <rect key="frame" x="49" y="74.5" width="279" height="81.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEn-7V-By6">
+                                        <rect key="frame" x="85" y="177" width="207" height="206.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="WEn-7V-By6" secondAttribute="height" multiplier="1:1" id="eud-UW-dh2"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="CameraIcon"/>
+                                        <connections>
+                                            <segue destination="mQd-Ml-Kez" kind="presentation" modalPresentationStyle="fullScreen" id="GdM-mx-6DG"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Choose an object" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyl-XV-y1c">
+                                        <rect key="frame" x="151" y="307" width="76" height="47"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="1p0-9P-zQ6" firstAttribute="centerY" secondItem="FOn-Rg-TDZ" secondAttribute="centerY" multiplier="1.19" id="61q-Kx-YaN"/>
-                                    <constraint firstItem="FOn-Rg-TDZ" firstAttribute="width" secondItem="XMH-a8-mEI" secondAttribute="width" multiplier="0.5465" id="I7S-D2-g1H"/>
-                                    <constraint firstItem="FOn-Rg-TDZ" firstAttribute="centerX" secondItem="XMH-a8-mEI" secondAttribute="centerX" id="Kg6-JD-lom"/>
-                                    <constraint firstItem="FOn-Rg-TDZ" firstAttribute="top" secondItem="5LP-Y6-SF4" secondAttribute="bottom" constant="21" id="PH4-Lo-Ob0"/>
-                                    <constraint firstItem="FOn-Rg-TDZ" firstAttribute="height" secondItem="XMH-a8-mEI" secondAttribute="height" multiplier="0.4444" id="VdL-Z6-peE"/>
-                                    <constraint firstItem="FOn-Rg-TDZ" firstAttribute="centerY" secondItem="XMH-a8-mEI" secondAttribute="centerY" multiplier="1.2" id="gfH-gA-6jT"/>
+                                    <constraint firstItem="WEn-7V-By6" firstAttribute="width" secondItem="XMH-a8-mEI" secondAttribute="width" multiplier="0.5465" constant="1" id="47q-cK-EIS"/>
+                                    <constraint firstItem="5LP-Y6-SF4" firstAttribute="width" secondItem="WEn-7V-By6" secondAttribute="width" multiplier="1.35" id="CD8-TS-UNv"/>
+                                    <constraint firstItem="Oyl-XV-y1c" firstAttribute="centerX" secondItem="WEn-7V-By6" secondAttribute="centerX" id="Gp4-jb-okB"/>
+                                    <constraint firstAttribute="width" secondItem="XMH-a8-mEI" secondAttribute="height" multiplier="377:466" id="NKP-Zt-PJo"/>
+                                    <constraint firstItem="WEn-7V-By6" firstAttribute="centerY" secondItem="XMH-a8-mEI" secondAttribute="centerY" multiplier="1.2" constant="1" id="VfW-fY-qga"/>
+                                    <constraint firstItem="WEn-7V-By6" firstAttribute="centerX" secondItem="XMH-a8-mEI" secondAttribute="centerX" id="YWS-cK-adh"/>
+                                    <constraint firstItem="WEn-7V-By6" firstAttribute="height" secondItem="XMH-a8-mEI" secondAttribute="height" multiplier="0.4444" priority="900" constant="1" id="feI-EJ-tp0"/>
+                                    <constraint firstItem="WEn-7V-By6" firstAttribute="top" secondItem="5LP-Y6-SF4" secondAttribute="bottom" constant="21" id="gFB-nx-mws"/>
+                                    <constraint firstItem="5LP-Y6-SF4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="XMH-a8-mEI" secondAttribute="top" constant="20" id="nLo-Uy-ZBO"/>
                                     <constraint firstItem="5LP-Y6-SF4" firstAttribute="centerX" secondItem="XMH-a8-mEI" secondAttribute="centerX" id="uPB-tu-V5u"/>
-                                    <constraint firstItem="1p0-9P-zQ6" firstAttribute="centerX" secondItem="FOn-Rg-TDZ" secondAttribute="centerX" id="us0-LG-o3e"/>
-                                    <constraint firstItem="5LP-Y6-SF4" firstAttribute="width" secondItem="FOn-Rg-TDZ" secondAttribute="width" multiplier="1.35" id="zSB-rM-1fM"/>
+                                    <constraint firstItem="Oyl-XV-y1c" firstAttribute="centerY" secondItem="WEn-7V-By6" secondAttribute="centerY" multiplier="1.18" id="yep-rB-6TZ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -217,7 +224,7 @@ an object</string>
                             <constraint firstItem="XMH-a8-mEI" firstAttribute="centerY" secondItem="YC3-vR-9bL" secondAttribute="centerY" multiplier="0.9" id="cFy-76-goA"/>
                             <constraint firstItem="XMH-a8-mEI" firstAttribute="width" secondItem="YC3-vR-9bL" secondAttribute="width" multiplier="0.91" id="fNW-V3-SrW"/>
                             <constraint firstItem="qR4-95-1pA" firstAttribute="bottom" secondItem="kBX-jW-FNI" secondAttribute="bottom" id="khG-gS-v1l"/>
-                            <constraint firstItem="XMH-a8-mEI" firstAttribute="height" secondItem="YC3-vR-9bL" secondAttribute="height" multiplier="0.52" id="oV1-h7-1K9"/>
+                            <constraint firstItem="XMH-a8-mEI" firstAttribute="height" secondItem="YC3-vR-9bL" secondAttribute="height" multiplier="0.52" priority="900" id="oV1-h7-1K9"/>
                             <constraint firstItem="qR4-95-1pA" firstAttribute="trailing" secondItem="kBX-jW-FNI" secondAttribute="trailing" id="vOX-sI-Kct"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qR4-95-1pA"/>
@@ -230,6 +237,14 @@ an object</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHU-9S-nYH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2215.9420289855075" y="39.508928571428569"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="oYN-lv-a0y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="mQd-Ml-Kez" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48I-Y9-Ufv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2934" y="-68"/>
         </scene>
     </scenes>
     <resources>
