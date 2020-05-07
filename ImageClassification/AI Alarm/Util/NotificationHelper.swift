@@ -105,7 +105,7 @@ class NotificationHelper {
             dateComponents.day = day
         }
                 
-        let identifier = date.toString(dateFormat: "yyyy-MM-dd HH:mm:ss\(weekDayID)")
+        let identifier = "\(date.toString(dateFormat: "yyyy-MM-dd HH:mm:ss"))+\(weekDayID)"
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
@@ -120,9 +120,26 @@ class NotificationHelper {
             weekDayID = "+\(weekDay.tag)"
         }
       
-        let identifier = date.toString(dateFormat: "yyyy-MM-dd HH:mm:ss\(weekDayID)")
+        let identifier = "\(date.toString(dateFormat: "yyyy-MM-dd HH:mm:ss"))+\(weekDayID)"
         
         let center = UNUserNotificationCenter.current()
         center.removePendingNotificationRequests(withIdentifiers: [identifier] )
+    }
+    
+    
+    /// Does not work when device is locked
+    private static func scheduleTask(for date: Date) {
+                    
+            var bgTask = UIBackgroundTaskIdentifier(rawValue: 0)
+            bgTask = UIApplication.shared.beginBackgroundTask(expirationHandler: {
+                UIApplication.shared.endBackgroundTask(bgTask)
+            })
+            
+            let timer = Timer(fireAt: date, interval: 0, target: self, selector: #selector(playAlarm), userInfo: nil, repeats: false)
+            RunLoop.current.add(timer, forMode: .default)
+    }
+    
+    @objc private static func playAlarm() {
+        print("Play alarm!")
     }
 }
