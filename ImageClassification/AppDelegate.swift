@@ -65,19 +65,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-
+    
+    func startAlarm() {
+        
+        guard let window = self.window else { return }
+        
         AppDelegate.audioPlayer.playAlarmSound()
-                        
-        // TO-DO: - Open object recognizer screen
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "mainCameraScreen") as! ViewController
         viewController.isRegisteringObject  = false
-        self.window?.rootViewController = viewController
+        window.rootViewController = viewController
+        
+        let options: UIView.AnimationOptions = .transitionCrossDissolve
+        let duration: TimeInterval = 0.5
+
+        UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
         self.window?.makeKeyAndVisible()
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+
+        startAlarm()
         
         completionHandler() /// must be called
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        startAlarm()
+        
+        completionHandler([.alert, .badge, .sound])
+    }
+
 }
 

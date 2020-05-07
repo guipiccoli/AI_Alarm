@@ -41,7 +41,8 @@ class ViewController: UIViewController {
     
     // MARK: - Functionality Variables
     var isRegisteringObject: Bool = true
-    
+    var showldNavigateToAlarmList: Bool = true
+
     // MARK: Controllers that manage functionality
     // Handles all the camera related functionality
     private lazy var cameraCapture = CameraFeedManager(previewView: previewView)
@@ -214,7 +215,12 @@ extension ViewController: CameraFeedManagerDelegate {
         animationView.play {
             finished in
             
-            self.navigateToAlarmList()
+            if self.showldNavigateToAlarmList {
+                self.navigateToAlarmList()
+            }
+            else {
+                self.dismiss(animated: true, completion: nil)
+            }
         }
         
     }

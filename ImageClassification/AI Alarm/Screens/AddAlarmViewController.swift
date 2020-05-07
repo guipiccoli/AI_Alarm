@@ -19,7 +19,8 @@ class AddAlarmViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-
+    @IBOutlet weak var changeObjectButton: UIButton!
+    
     /// Weekday buttons
     @IBOutlet weak var mondayButton: UIButton!
     @IBOutlet weak var tuesdayButton: UIButton!
@@ -144,5 +145,15 @@ class AddAlarmViewController: UIViewController {
         saveAlarm()
         delegate?.willDisapear()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func changeObjectButtonClick(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "mainCameraScreen") as! ViewController
+        viewController.isRegisteringObject = true
+        viewController.showldNavigateToAlarmList = false
+
+        self.present(viewController, animated: true, completion: nil)
     }
 }
