@@ -11,7 +11,7 @@ import UIKit
 protocol ResultsViewControllerDelegate: class {
     
     func didScanObject()
-    
+    func cancelCapture()
 }
 
 class ResultsViewController: UIViewController {
@@ -74,6 +74,11 @@ class ResultsViewController: UIViewController {
         Database.updateObject(object)
         delegate?.didScanObject()
     }
+    
+    @IBAction func cancelCaptureSelection(_ sender: Any) {
+        delegate?.cancelCapture()
+    }
+    
     
     func turnAlarmOff() {
         

@@ -43,6 +43,7 @@ class AddAlarmViewController: UIViewController {
 
         configureNavigationBar()
         configureWeekDayButtons()
+        configureTextFields()
     }
     
 
@@ -86,6 +87,11 @@ class AddAlarmViewController: UIViewController {
         sundayButton.tag = 7
         
         weekDayButtons = [ mondayButton, tuesdayButton, wednesdayButton, thursdayButton, fridayButton, saturdayButton, sundayButton]
+    }
+    
+    private func configureTextFields() {
+        titleTextField.delegate = self
+        titleTextField.returnKeyType = .done
     }
     
     private func toggleButton(with tag: Int) {
@@ -155,5 +161,13 @@ class AddAlarmViewController: UIViewController {
         viewController.showldNavigateToAlarmList = false
 
         self.present(viewController, animated: true, completion: nil)
+    }
+}
+// MARK: - UITextFieldDelegate
+extension AddAlarmViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }

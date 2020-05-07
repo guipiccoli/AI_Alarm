@@ -242,6 +242,11 @@ extension ViewController: CameraFeedManagerDelegate {
 }
 
 extension ViewController: ResultsViewControllerDelegate {
+    
+    func cancelCapture() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func didScanObject() {
         animateCompletion()
     }

@@ -265,28 +265,31 @@
                     </view>
                     <navigationItem key="navigationItem" title="Alarms" id="zFv-jb-Hf6">
                         <barButtonItem key="leftBarButtonItem" title="Edit" style="plain" id="ney-cH-KGk">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sld-U5-2Xh">
-                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sld-U5-2Xh">
+                                <rect key="frame" x="20" y="5.5" width="92" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" name="Primary Text"/>
                                 <state key="normal" title="Edit">
                                     <color key="titleColor" name="Primary Text"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
                                 <connections>
                                     <action selector="editButtonClick:" destination="2PF-9e-3jQ" eventType="touchUpInside" id="IhF-WH-DfR"/>
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" landscapeImage="plus" style="plain" id="s85-aJ-CAv">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="96s-Wf-CKf">
-                                <rect key="frame" x="376" y="14" width="18" height="16"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="XLH-Ii-fRo">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OGW-AZ-rhf">
+                                <rect key="frame" x="266" y="0.0" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" name="Primary Text"/>
-                                <state key="normal" image="plus" catalog="system" backgroundImage="plus">
+                                <state key="normal" image="plus" catalog="system">
                                     <color key="titleColor" name="Primary Text"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kBF-VH-yab" kind="presentation" identifier="addAlarm" id="M79-bI-DGI"/>
+                                    <segue destination="kBF-VH-yab" kind="presentation" id="zQl-p0-Fbk"/>
                                 </connections>
                             </button>
                         </barButtonItem>

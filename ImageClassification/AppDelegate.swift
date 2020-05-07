@@ -25,15 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UNUserNotificationCenter.current().delegate = self
         
+        /// Uncomment this line to do a full database cleanup before app start
         // Database.reset()
-            
-            /// Uncomment this line in order to debug the onboarding
-            // Database.updateIsFirstTime(nil)
-            /// ------------------------------------------------
-            
+        /// ------------------------------------------------
+        
         guard let window = self.window else { return true }
         
-        if Database.getIsFirstTime() {
+        if Database.getObject() == nil {
             
             Database.updateIsFirstTime(false)
             
@@ -43,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let options: UIView.AnimationOptions = .transitionCrossDissolve
             let duration: TimeInterval = 0.5
-
+            
             UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
         }
             
@@ -52,10 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let storyboard = UIStoryboard(name: "Alarms", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "AlarmsNavigationController") as! UINavigationController
             window.rootViewController = viewController
-
+            
             let options: UIView.AnimationOptions = .transitionCrossDissolve
             let duration: TimeInterval = 0.5
-
+            
             UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
         }
         
@@ -71,7 +69,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         guard let window = self.window else { return }
         
         AppDelegate.audioPlayer.playAlarmSound()
-
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "mainCameraScreen") as! ViewController
         viewController.isRegisteringObject  = false
@@ -79,13 +77,13 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         let options: UIView.AnimationOptions = .transitionCrossDissolve
         let duration: TimeInterval = 0.5
-
+        
         UIView.transition(with: window, duration: duration, options: options, animations: {}, completion: nil)
         self.window?.makeKeyAndVisible()
     }
-
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-
+        
         startAlarm()
         
         completionHandler() /// must be called
@@ -97,6 +95,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
         completionHandler([.alert, .badge, .sound])
     }
-
+    
 }
 
